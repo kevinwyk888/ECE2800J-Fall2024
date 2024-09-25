@@ -63,6 +63,12 @@ graph TB
 - `rm files`: Delete files
 - `rm -r dir` Delete dir along with its contents.
 
+**Useful options `-i`** : prompt before every removal
+
+- To use: alias rm='rm-i';
+- Use nano ~/.bashrc to put it into the surroundings.
+- Use source ~/.bashrc to implement it.
+
 ### Copy Files/Directories
 
 - **Basic command**: `cp source destination`
@@ -82,4 +88,12 @@ graph TB
   - If dir2 does not exist, copy dir1 as dir2.
   -  If dir2 exists, copy dir1 **inside** dir2, which means dir2 include a directory named dir1.
 -  `*`: a wildcard which can represent any character string (even an empty string)
--  
+
+### Rename/Move a File 
+
+- **Basic command**: `cp source destination`
+- `mv file1 file2` : rename file1 as file2. (If file2 exists, file1 overlap file2)
+- `mv file1 dir` : move file into a directory. (If file1 exists, file1 overlap the original one in dir)
+- `mv dir1 dir2` :  
+  - If dir2 does not exist, then rename dir1 as dir2. 
+  - If dir2 exists, then move dir1 **inside** dir2.
