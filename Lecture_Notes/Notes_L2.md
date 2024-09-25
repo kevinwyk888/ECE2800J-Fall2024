@@ -97,3 +97,41 @@ graph TB
 - `mv dir1 dir2` :  
   - If dir2 does not exist, then rename dir1 as dir2. 
   - If dir2 exists, then move dir1 **inside** dir2.
+
+### Edit/Show a File
+
+- `nano file`: Edit file
+- `cat file`: Show file content
+- `less file`: Show file content
+  - `q` : quit
+  - `g` : go to the beginning
+  - `G` : go to the end
+  - `/` : search
+  - `n` : for the next match
+  - `N` : for the previous match.
+
+### I/O Redirection
+
+`>` : redirect output
+- E.g. `ls -l > output.txt`
+`<` : redirect input
+- E.g. `./my_add < input.txt`
+
+### Other Commands
+
+- `Tab`: Auto completion
+  -  If there is a single match, Linux completes the remaining.
+  -  If there are multiple matches, hit the second time, Linux shows all the possible candidates.
+- `diff file1 file2`: Compare two files
+  -  If files are the same, no output.
+  -  If there are differences: lines after '<' are from the first file; lines after '>' are from the second file
+  -  In a summary line: 'c': change;  'a': add;  'd': delete
+  -  **Useful options** : `-y` output in two columns `-w` ignore all white spaces.
+  
+![](picture/3.jpg)  
+
+- `sudo apt-get install <package>`: install a package
+- `sudo apt-get autoremove <package>`: delete a package
+  -  sudo is used to run a command as a super user.
+  -  apt-get is a package manager, equivalent to apt.
+- `man command`: Look for help
