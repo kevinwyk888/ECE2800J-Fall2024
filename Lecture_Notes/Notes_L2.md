@@ -40,8 +40,8 @@ graph TB
   - ``ls -l -a``, ``ls -la``,``ls -al`` are equivalent.
   
 #### Detailed information
-![](1.jpg)
-![](2.jpg)
+![](picture/1.jpg)
+![](picture/2.jpg)
 
 **Explanation**
 
