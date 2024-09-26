@@ -19,3 +19,6 @@ Code -> Compile+linkers(Programs) -> Machine Code ->  CPU(computer)
  **Useful options** : 
   - `-g` : Put debugging information in the executable file
   - `-Wall` : Turn on all warnings.
+  
+**E.g.**
+![](picture/4.jpg)
