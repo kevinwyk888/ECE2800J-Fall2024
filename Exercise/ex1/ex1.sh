@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm -r Coursework
-
 mkdir Coursework
 cd Coursework
 mkdir assignments
