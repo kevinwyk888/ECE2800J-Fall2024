@@ -1,0 +1,4 @@
+total 0
+drwxrwxrwx 1 kevin_wyk kevin_wyk 4096 Sep 29 11:09 assignments
+-rwxrwxrwx 1 kevin_wyk kevin_wyk    0 Sep 29 11:09 directory_info.txt
+drwxrwxrwx 1 kevin_wyk kevin_wyk 4096 Sep 29 11:09 reports
