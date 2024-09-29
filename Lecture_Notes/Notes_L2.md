@@ -114,6 +114,7 @@ graph TB
 
 `>` : redirect output
 - E.g. `ls -l > output.txt`
+
 `<` : redirect input
 - E.g. `./my_add < input.txt`
 
