@@ -27,3 +27,39 @@ Code -> Compile+linkers(Programs) -> Machine Code ->  CPU(computer)
   
 **E.g.**
 ![](picture/4.jpg)
+
+### Problem of Multiple Definition
+
+**Solution**: Header guard.
+
+```cpp
+//add.h
+#ifndef ADD_H
+#define ADD_H
+int add(int a,int b)
+#endif
+```
+
+### Another way to compile
+
+```bash
+g++ -Wall -o run_add run_add.cpp add.cpp
+=
+g++ -Wall -c run_add.cpp
+g++ -Wall -c add.cpp
+g++ -Wall -o run_add run_add.o add.object
+```
+
+![](picture/6.jpg)
+
+```mermaid
+graph TB
+
+run_add-->run_add.o
+run_add.o-->run_add.cpp
+run_add-->add.o
+add.o-->add.cpp
+
+```
+
+#### [Useful Reference](https://zhuanlan.zhihu.com/p/618350718)
