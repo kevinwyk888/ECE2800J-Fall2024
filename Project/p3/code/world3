@@ -1,0 +1,12 @@
+10
+10
+alt_rover east 8 6
+alt_rover north 6 6
+path_finder south 4 7
+rrover west 5 5
+flytrap east 1 1
+landmine south 4 4
+food south 3 2
+food south 7 1
+lrover north 2 0
+hop west 0 3
