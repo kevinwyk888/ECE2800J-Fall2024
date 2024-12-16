@@ -1,6 +1,127 @@
 ### Introduction
 
+20. Template; Container
+
 21. Operator Overloading
+
+### Containers
+
+- Their purpose in life is to `contain` other objects, and they generally have no intrinsic meaning on their own.
+
+-  Reusing code for different types is called **polymorphism** or **polymorphic code**.
+  
+-  We can use a C++ mechanism called "templates" to write the container code only once.
+
+```cpp
+template <class T>
+class List {
+public:
+ // methods
+ // constructors/destructor
+  private:
+  struct node {
+    node *next;
+    T v;
+  };
+...
+};
+
+ template <class T>
+ class List {
+ ...
+ };
+ template <class T>
+ void List<T>::insert(T v) {
+ ...
+ }
+
+// Create a static list of integers
+ List<int> li;
+ // Create a dynamic list of integers
+ List<int> *lip = new List<int>;
+ // Create a dynamic list of doubles.
+ List<double> *ldp = new List<double>;
+
+```
+
+**Remark:**
+- We should put your class member function definition also in the `.h` file, following class definition. So, there is no `.cpp` for member functions
+
+![](picture/9.jpg)
+
+### Container of Pointers
+
+We use pointer to deliver a **big thing**.
+
+1. `Existence Rule`: An object must be dynamically allocated before a pointer to it is inserted.
+2. `Ownership Rule`: Once a pointer to an object is inserted, that object becomes the property of the container. It can only be modified through the methods of the container.
+3. `Conservation Rule`: When a pointer is removed from a container, either the pointer must be inserted into some container, or its referent must be deleted after using.
+
+#### Two such methods that could destroy a container
+
+- The destructor:  Destroys an existing instance.
+
+- The assignment operator:  Destroys an existing instance before copying the contents of another instance.
+
+![](/picture/10.jpg)
+
+### Polymorphic Container
+
+```cpp
+ class Object {
+    public:
+    virtual ~Object() { }
+ };
+
+struct node {
+    node   *next;
+    Object *value;
+ };
+
+class List {
+    ...
+    public:
+    void insert(Object *o);
+    Object *remove();
+    ...
+}; 
+
+
+//legal
+BigThing *bp = new BigThing;
+l.insert(bp);
+
+Object *op;
+BigThing *bp;
+op = l.remove();
+bp = dynamic_cast<BigThing *>(op);
+```
+
+Avoid shallow copy:
+
+```cpp
+class Object {
+  public:
+  virtual Object *clone() = 0;
+  // EFFECT: copy this, return a pointer to it
+  virtual ~Object() { }
+};
+
+class BigThing : public Object {
+ ... 
+public:
+  Object *clone();
+  ...
+  BigThing(const BigThing &b);    
+}
+
+Object *BigThing::clone() {
+  BigThing *bp = new BigThing(*this);
+  return bp;  // Legal due to substitution
+  // rule
+}
+
+```
 
 ### Operator Overloading
 
